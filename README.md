@@ -26,4 +26,6 @@ Ready to dive in? Follow these simple steps:
 
 That's it! You're all set to start building your awesome Pygame projects with a clean and efficient foundation. ✨
 
-**Note:** Further documentation providing more in-depth explanations and examples will be available soon. Stay tuned! 😉
+
+## Further Documentation
+    ¯\_(ツ)_/¯
