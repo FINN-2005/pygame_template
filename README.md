@@ -1,6 +1,6 @@
-# `pygame_template`: Your Lean Pygame Starting Point 🚀
+# `pygame_template`
 
-This is my (almost) 'NO FLUFF' Pygame framework designed to get you up and running quickly.
+This is my Pygame wrapper designed to make creative coding easier.
 
 ## Installation 🛠️
 
@@ -26,8 +26,6 @@ This is my (almost) 'NO FLUFF' Pygame framework designed to get you up and runni
     ```bash
     pip install .
     ```
-
-That's it! You're all set to start building your awesome Pygame projects with a clean and efficient foundation. ✨
 
 
 ## Further Documentation
