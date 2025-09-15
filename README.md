@@ -6,9 +6,7 @@ This is my (almost) 'NO FLUFF' Pygame framework designed to get you up and runni
 
 ### Install directly with Git.
 
-    ```bash
     pip install git+https://github.com/FINN-2005/pygame_template.git
-    ```
 
 ### Otherwise:
 
