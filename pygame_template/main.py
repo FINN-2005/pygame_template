@@ -1,10 +1,10 @@
 import pygame
 from pygame_template.colors import Color
+from pygame import Vector2 as V2
+from pygame import Vector3 as V3
+
+
 import ctypes
-from pygame.math import Vector2 as V2
-from pygame.math import Vector3 as V3
-
-
 ctypes.windll.user32.SetProcessDPIAware()
 
 class APP:
@@ -22,8 +22,17 @@ class APP:
         self.bg_col = Color.gray18
         self.window_title = 'fps'
         self.dt_speed_factor = 100
-        
+
+        # ========== T I C K   S Y S T E M ==========
+        self.use_tick_system = False
+        self.prev_time_ticks = pygame.time.get_ticks()
+        self.TICK_RATE = 40
+
         self.init()
+
+        self.TICK_EVENT = pygame.USEREVENT + 1
+        self.TICK_TIME = int(1000 / self.TICK_RATE)
+        pygame.time.set_timer(self.TICK_EVENT, self.TICK_TIME)
         
         self.HW = self.WIDTH / 2
         self.HH = self.HEIGHT / 2
@@ -36,6 +45,7 @@ class APP:
         
         self.setup()
         self._first = True
+        if self.use_tick_system: self.dt_speed_factor = 1
         self._run()
         
     def init(self):
@@ -48,6 +58,12 @@ class APP:
         ...
         
     def draw(self):
+        ...
+
+    def first_update(self):
+        ...
+
+    def tick(self, dt):
         ...
 
     def update(self):
@@ -63,13 +79,23 @@ class APP:
             for event in pygame.event.get():
                 if event.type == pygame.QUIT or (event.type == pygame.KEYDOWN and event.key == pygame.K_ESCAPE):
                     self.running = False
+                if self.use_tick_system and (event.type == self.TICK_EVENT):
+                    dt = (self.TICK_TIME / 1000) * self.dt_speed_factor
+                    self.prev_time_ticks = pygame.time.get_ticks()
+                    self.tick(dt)
                 self.event(event)
                     
             if self._first:
+                self.prev_time_ticks = pygame.time.get_ticks()
                 self.screen.fill(self.bg_col)
+                self.first_update()
                 self._first = False
             if not self.no_clear:
                 self.screen.fill(self.bg_col)
+            
+            now = pygame.time.get_ticks()
+            self.tick_alpha = min((now - self.prev_time_ticks) / self.TICK_TIME, 1)
+
             self.update()
             self.draw()
             if self.window_title == 'fps': 
