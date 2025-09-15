@@ -4,10 +4,15 @@ This is my (almost) 'NO FLUFF' Pygame framework designed to get you up and runni
 
 ## Installation 🛠️
 
-Ready to dive in? Follow these simple steps:
+### Install directly with Git.
 
-1.  **Clone the Repository:** Grab the code from GitHub.
+    ```bash
+    pip install git+https://github.com/FINN-2005/pygame_template.git
+    ```
 
+### Otherwise:
+
+1. Clone the repo or download and extract the zip file
     ```bash
     git clone https://github.com/FINN-2005/pygame_template.git
     ```
