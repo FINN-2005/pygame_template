@@ -37,6 +37,7 @@ class APP:
         self.HW = self.WIDTH / 2
         self.HH = self.HEIGHT / 2
         APP.HW, APP.HH = self.HW, self.HH
+        APP.W, APP.H = self.WIDTH, self.HEIGHT
         self.RES = self.WIDTH, self.HEIGHT
         
         if self.FULLSCREEN: self.screen = pygame.display.set_mode(self.RES, pygame.SRCALPHA | pygame.FULLSCREEN)
