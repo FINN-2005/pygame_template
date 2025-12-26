@@ -11,6 +11,7 @@ class APP:
     W,H = 1280,720
     HW, HH = W//2, H//2
     FPS = 120
+    INSTANCE = None
     def __init__(self):
         
         self.limit_fps = False
@@ -22,6 +23,7 @@ class APP:
         self.bg_col = Color.gray18
         self.window_title = 'fps'
         self.dt_speed_factor = 100
+        APP.INSTANCE = self
 
         # ========== T I C K   S Y S T E M ==========
         self.use_tick_system = False
