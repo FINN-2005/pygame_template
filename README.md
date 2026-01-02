@@ -9,17 +9,15 @@ This is my Pygame wrapper designed to make creative coding easier.
     pip install git+https://github.com/FINN-2005/pygame_template.git
 
 ### Otherwise:
+- Clone the repo or download and extract the zip file
+```bash
+git clone https://github.com/FINN-2005/pygame_template.git
+```
 
-1. Clone the repo or download and extract the zip file
-    ```bash
-    git clone https://github.com/FINN-2005/pygame_template.git
-    ```
-
-2.  **Navigate to the Directory:** Step into the newly created folder.
-
-    ```bash
-    cd pygame_template
-    ```
+- **Navigate to the Directory:** Step into the newly created folder.
+```bash
+cd pygame_template
+```
 
 3.  **Install the Package:** Use pip to install the framework. The `.` tells pip to look for the `setup.py` file in the current directory.
 
@@ -29,4 +27,4 @@ This is my Pygame wrapper designed to make creative coding easier.
 
 
 ## Further Documentation
-    ¯\_(ツ)_/¯
+¯\_(ツ)_/¯ (WIP - Look at Code Examples)  
