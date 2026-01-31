@@ -90,7 +90,7 @@ class APP:
                     
             if self._first:
                 self.prev_time_ticks = pygame.time.get_ticks()
-                self.screen.fill(self.bg_col)
+                # self.screen.fill(self.bg_col)
                 self.first_update()
                 self._first = False
             if not self.no_clear:
@@ -108,3 +108,4 @@ class APP:
             
             pygame.display.flip()
             
+
