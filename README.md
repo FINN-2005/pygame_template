@@ -6,7 +6,7 @@ This is my Pygame wrapper designed to make creative coding easier.
 
 It's only here to make my own life easier, after years of creative coding in python and pygame, I just kept noticing little modules of practical implementations that I always implemented.  
 So I just bundled them together and added some new cool utilities.  
-And boy is it useful, I have literally used this to make:  
+I have literally used this to make:  
 - rendering pipelines  
 - multiplayer / singleplayer games  
 - physics simulations  
