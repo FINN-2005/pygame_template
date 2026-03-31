@@ -3,9 +3,11 @@ from pygame_template.colors import Color
 from pygame import Vector2 as V2
 from pygame import Vector3 as V3
 
+import sys
 
-import ctypes
-ctypes.windll.user32.SetProcessDPIAware()
+if sys.platform == "win32":
+    import ctypes
+    ctypes.windll.user32.SetProcessDPIAware()
 
 class APP:
     W,H = 1280,720
