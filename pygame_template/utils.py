@@ -97,6 +97,11 @@ def lerp(val, xmin, xmax, ymin, ymax):
     if xmax - xmin == 0: return ymin
     return ymin + (val - xmin) * (ymax - ymin) / (xmax - xmin)
 
+def get_random_screen_pos(w, h):
+    x = random.randint(0, w)
+    y = random.randint(0, h)
+    return V2(x, y)
+
 
 def perlin_noise(given: V2, grid_scale = 10, seed=12345) -> float:
     def get_gradient(x, y):
