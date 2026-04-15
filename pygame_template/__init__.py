@@ -8,7 +8,7 @@ import numpy as np
 
 pygame.init()
 
-from pygame_template.utils import Group, Sprite, Rect, get_Font, get_2d_input_dir, get_3d_input_dir, lerp, perlin_noise
+from pygame_template.utils import Group, Sprite, Rect, get_Font, get_2d_input_dir, get_3d_input_dir, lerp, get_random_screen_pos, perlin_noise
 from pygame_template.colors import Color
 from pygame_template.draw import Drawer, SelectionBox
 from pygame_template.main import APP
