@@ -1,5 +1,6 @@
 import pygame
 from pygame_template.colors import Color
+from pygame_template.inputs import Input_manager
 from pygame import Vector2 as V2
 from pygame import Vector3 as V3
 
@@ -14,6 +15,7 @@ class APP:
     HW, HH = W//2, H//2
     FPS = 120
     INSTANCE = None
+
     def __init__(self):
         
         self.limit_fps = False
@@ -31,6 +33,10 @@ class APP:
         self.use_tick_system = False
         self.prev_time_ticks = pygame.time.get_ticks()
         self.TICK_RATE = 40
+
+        # ========== I N P U T   S Y S T E M ==========
+        self.use_input_system = False
+        self._input_manager = None
 
         self.init()
 
@@ -88,6 +94,8 @@ class APP:
                     dt = (self.TICK_TIME / 1000) * self.dt_speed_factor
                     self.prev_time_ticks = pygame.time.get_ticks()
                     self.tick(dt)
+                if self.use_input_system and (event.type in [pygame.KEYDOWN, pygame.KEYUP, pygame.MOUSEBUTTONDOWN, pygame.MOUSEBUTTONUP]):
+                    self._input_manager._event(event)
                 self.event(event)
                     
             if self._first:
@@ -103,6 +111,10 @@ class APP:
 
             self.update()
             self.draw()
+
+            if self.use_input_system:
+                self._input_manager._update()
+
             if self.window_title == 'fps': 
                 pygame.display.set_caption(f'FPS: {self.clock.get_fps()//1}')
             else:

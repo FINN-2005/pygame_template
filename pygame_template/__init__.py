@@ -5,10 +5,14 @@ import random
 import math
 import time
 import numpy as np
+import re
+from pathlib import Path
 
 pygame.init()
 
-from pygame_template.utils import Group, Sprite, Rect, get_Font, get_2d_input_dir, get_3d_input_dir, lerp, get_random_screen_pos, perlin_noise
+from pygame_template.utils import Group, Sprite, Rect, get_Font, get_2d_input_dir, get_3d_input_dir, get_random_screen_pos, lerp, perlin_noise
+from pygame_template.animation import Animation_player, Timer
+from pygame_template.inputs import Input_manager
 from pygame_template.colors import Color
 from pygame_template.draw import Drawer, SelectionBox
 from pygame_template.main import APP
